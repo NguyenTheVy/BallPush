@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UiGamePlay : MonoBehaviour
@@ -14,6 +15,7 @@ public class UiGamePlay : MonoBehaviour
 
     [SerializeField] private Button btn_setting;
     [SerializeField] private Button btn_Skip;
+    [SerializeField] private Button btn_Replay;
 
     public PopupWin popupWin;
     public PopupPause PopupSetting;
@@ -31,8 +33,13 @@ public class UiGamePlay : MonoBehaviour
     {
         btn_setting.onClick.AddListener(OnOpenSetting);
         btn_Skip.onClick.AddListener(OnSkipGame);
-
+        btn_Replay.onClick.AddListener(OnReplay);
         InitLevel();
+    }
+
+    private void OnReplay()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void InitLevel()

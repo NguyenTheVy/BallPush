@@ -282,7 +282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipeListener: {fileID: 5019997090103064793}
   playerTransform: {fileID: 5858741413680041252}
-  playerSpeed: 10
+  playerSpeed: 9
+  isEndGame: 0
   bottomLeftLimit: {fileID: 5161950543717822633}
   topRightLimit: {fileID: 4238411041485752745}
   isMoving: 0

@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody2D _rb;
 
+    private void Start()
+    {
+        _rb = transform.GetComponent<Rigidbody2D>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("BallRed"))
         {
             Debug.Log("Chạm vào BallRed");
+
+            _rb.velocity = Vector2.zero;
 
             // Lấy hướng tác động từ player tới BallRed
             Vector2 hitDirection = collision.transform.position - transform.position;

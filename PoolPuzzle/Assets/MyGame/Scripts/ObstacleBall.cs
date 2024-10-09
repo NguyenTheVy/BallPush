@@ -5,7 +5,7 @@ using DG.Tweening; // Thêm thư viện DoTween
 
 public class ObstacleBall : MonoBehaviour
 {
-    public float moveDistance = 5f; // Khoảng cách di chuyển
+    public float moveDistance = 7f; // Khoảng cách di chuyển
     public float moveDuration = 1f; // Thời gian di chuyển
     [SerializeField] private bool isMoving = false; // Biến để theo dõi trạng thái di chuyển
     void Start()
@@ -75,7 +75,7 @@ public class ObstacleBall : MonoBehaviour
         StopBallMovement(); // Dừng tween nếu vào vùng lỗ
 
         // Thực hiện tween scale về 0
-        transform.DOScale(0, 1f).SetEase(Ease.OutBounce).OnComplete(() =>
+        transform.DOScale(0, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
         {
           // Gọi hàm khi bóng vào lỗ
             gameObject.SetActive(false); // Vô hiệu hóa BallRed
