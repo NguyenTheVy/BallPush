@@ -55,4 +55,9 @@ public class UiGamePlay : MonoBehaviour
     {
         PopupSetting.gameObject.SetActive(true);
     }
+
+    private void OnDisable()
+    {
+        SoundManager.Instance.StopPlayMusic();
+    }
 }

@@ -47,9 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipeListener: {fileID: 918829008684155441}
   playerTransform: {fileID: 8050189800912995934}
-  playerSpeed: 20
+  playerSpeed: 10
   bottomLeftLimit: {fileID: 7431791045766805557}
   topRightLimit: {fileID: 1272630514746069733}
+  isMoving: 0
   ballsInPlay: []
 --- !u!1 &853564299198267132
 GameObject:
@@ -179,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   moveDuration: 1
+  isMoving: 0
 --- !u!61 &3564491536247073808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -547,6 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   moveDuration: 1
+  isMoving: 0
 --- !u!61 &526773569541890679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -751,6 +754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   moveDuration: 1
+  isMoving: 0
 --- !u!61 &6884332420811320305
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1181,6 +1185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   moveDuration: 1
+  isMoving: 0
 --- !u!61 &7467596701491599343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1373,7 +1378,7 @@ Transform:
   m_GameObject: {fileID: 8667366292094546400}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4987142, y: -2.06, z: 0}
+  m_LocalPosition: {x: -2.03, y: -1.09, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []

@@ -282,9 +282,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipeListener: {fileID: 8423244405586744782}
   playerTransform: {fileID: 7628666733112152687}
-  playerSpeed: 20
+  playerSpeed: 10
   bottomLeftLimit: {fileID: 7640287157649923713}
   topRightLimit: {fileID: 7027967668716885565}
+  isMoving: 0
   ballsInPlay: []
 --- !u!1 &4354516313231167756
 GameObject:
@@ -536,6 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   moveDuration: 1
+  isMoving: 0
 --- !u!61 &2358704757416594243
 BoxCollider2D:
   m_ObjectHideFlags: 0

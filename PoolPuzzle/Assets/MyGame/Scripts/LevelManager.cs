@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float playerSpeed;
 
+    public bool isEndGame = false;
+
     // Điểm giới hạn di chuyển
     [SerializeField] private Transform bottomLeftLimit;
     [SerializeField] private Transform topRightLimit;
@@ -34,7 +36,7 @@ public class LevelManager : MonoBehaviour
     private void OnSwipe(string swipe)
     {
         // Chỉ xử lý vuốt khi nhân vật không di chuyển
-        if (!isMoving)
+        if (!isMoving && !isEndGame)
         {
             switch (swipe)
             {
@@ -104,18 +106,23 @@ public class LevelManager : MonoBehaviour
     }
 
     // Kiểm tra điều kiện thắng
-    private void CheckWinCondition()
+    public void CheckWinCondition()
     {
         if (ballsInPlay.Count == 0)
         {
+            if (isEndGame) return;
+
             UiGamePlay.instance.popupWin.gameObject.SetActive(true);
+            isEndGame = true;
             // Gọi phương thức thắng game, chẳng hạn như hiện thông báo hoặc chuyển cảnh
         }
     }
 
     public void OnPlayerFellIntoHole()
     {
+        if (isEndGame) return;
         UiGamePlay.instance.popupLose.gameObject.SetActive(true);
+        isEndGame = true;
         // Thực hiện hành động thua, chẳng hạn như hiện thông báo hoặc chuyển cảnh
     }
 }

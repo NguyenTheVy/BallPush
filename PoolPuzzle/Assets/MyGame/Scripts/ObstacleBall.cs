@@ -31,6 +31,7 @@ public class ObstacleBall : MonoBehaviour
             }*/
             if (IsInHoleLayer(transform.position))
             {
+                GameManager.instance.CurrentLevel.OnBallEnteredHole(this.gameObject);
                 DisableBall(); // Dừng nếu vào vùng lỗ
             }
         }).OnComplete(() =>
@@ -76,7 +77,7 @@ public class ObstacleBall : MonoBehaviour
         // Thực hiện tween scale về 0
         transform.DOScale(0, 1f).SetEase(Ease.OutBounce).OnComplete(() =>
         {
-            GameManager.instance.CurrentLevel.OnBallEnteredHole(this.gameObject); // Gọi hàm khi bóng vào lỗ
+          // Gọi hàm khi bóng vào lỗ
             gameObject.SetActive(false); // Vô hiệu hóa BallRed
             Debug.Log("BallRed đã bị tắt do vào vùng lỗ.");
         });

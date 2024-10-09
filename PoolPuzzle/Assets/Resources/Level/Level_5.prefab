@@ -774,6 +774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   moveDuration: 1
+  isMoving: 0
 --- !u!61 &4020637848801503758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1031,6 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   moveDuration: 1
+  isMoving: 0
 --- !u!61 &4755043872544908962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1204,6 +1206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   moveDuration: 1
+  isMoving: 0
 --- !u!61 &3331786738337121505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1296,9 +1299,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipeListener: {fileID: 4886865737951801749}
   playerTransform: {fileID: 4497020901063874857}
-  playerSpeed: 20
+  playerSpeed: 10
   bottomLeftLimit: {fileID: 5496901074889218234}
   topRightLimit: {fileID: 6363821076754464757}
+  isMoving: 0
   ballsInPlay: []
 --- !u!1 &7338461096457093137
 GameObject:
@@ -1592,6 +1596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 5
   moveDuration: 1
+  isMoving: 0
 --- !u!61 &2009806954099967504
 BoxCollider2D:
   m_ObjectHideFlags: 0
