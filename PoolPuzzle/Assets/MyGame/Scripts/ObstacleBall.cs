@@ -11,7 +11,7 @@ public class ObstacleBall : MonoBehaviour
     void Start()
     {
         // Giả sử bạn có cách nào đó để khởi tạo bóng
-        GameManager.Instance.AddBall(this.gameObject);
+        GameManager.instance.CurrentLevel.AddBall(this.gameObject);
     }
 
     public void MoveBall(Vector2 hitDirection)
@@ -43,8 +43,8 @@ public class ObstacleBall : MonoBehaviour
     private bool IsWithinLimits(Vector3 position)
     {
         // Kiểm tra xem vị trí có nằm trong giới hạn không
-        return position.x >= GameManager.Instance.BottomLeftLimit.position.x && position.x <= GameManager.Instance.TopRightLimit.position.x &&
-               position.y >= GameManager.Instance.BottomLeftLimit.position.y && position.y <= GameManager.Instance.TopRightLimit.position.y;
+        return position.x >= GameManager.instance.CurrentLevel.BottomLeftLimit.position.x && position.x <= GameManager.instance.CurrentLevel.TopRightLimit.position.x &&
+               position.y >= GameManager.instance.CurrentLevel.BottomLeftLimit.position.y && position.y <= GameManager.instance.CurrentLevel.TopRightLimit.position.y;
     }
 
     private bool IsInHoleLayer(Vector3 position)
@@ -77,7 +77,7 @@ public class ObstacleBall : MonoBehaviour
         // Thực hiện tween scale về 0
         transform.DOScale(0, 1f).SetEase(Ease.OutBounce).OnComplete(() =>
         {
-            GameManager.Instance.OnBallEnteredHole(this.gameObject); // Gọi hàm khi bóng vào lỗ
+            GameManager.instance.CurrentLevel.OnBallEnteredHole(this.gameObject); // Gọi hàm khi bóng vào lỗ
             gameObject.SetActive(false); // Vô hiệu hóa BallRed
             Debug.Log("BallRed đã bị tắt do vào vùng lỗ.");
         });

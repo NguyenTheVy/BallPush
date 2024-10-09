@@ -42,3 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 2070971935
+    locked: 0
+  - name: Obj
+    uniqueID: 365422491
+    locked: 0
+  - name: UI
+    uniqueID: 3053329059
+    locked: 0
+  - name: FX
+    uniqueID: 3402432341
+    locked: 0

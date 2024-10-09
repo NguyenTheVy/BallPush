@@ -28,13 +28,15 @@ public class PlayerController : MonoBehaviour
             ObstacleBall ballController = collision.gameObject.GetComponent<ObstacleBall>();
             if (ballController != null)
             {
+                SoundManager.Instance.PlayFxSound(SoundManager.Instance.Ballhit);
+
                 ballController.MoveBall(hitDirection); // Gọi hàm di chuyển BallRed theo hướng thẳng
             }
 
             // Đặt trạng thái IsMoving của GameManager
-            GameManager.Instance.IsMoving = false;
+            GameManager.instance.CurrentLevel.IsMoving = false;
         }
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -60,9 +62,9 @@ public class PlayerController : MonoBehaviour
         // Thực hiện tween scale về 0 cho BallPlayer
         transform.DOScale(0, 0.5f).SetEase(Ease.Linear).OnComplete(() =>
         {
-            GameManager.Instance.OnPlayerFellIntoHole(); // Gọi hàm khi BallPlayer rơi vào lỗ
+            GameManager.instance.CurrentLevel.OnPlayerFellIntoHole(); // Gọi hàm khi BallPlayer rơi vào lỗ
             gameObject.SetActive(false); // Vô hiệu hóa BallPlayer sau khi scale về 0
-            Debug.Log("BallPlayer đã bị tắt do vào vùng lỗ.");  
+            Debug.Log("BallPlayer đã bị tắt do vào vùng lỗ.");
         });
     }
 
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour
     private bool IsAtLimits(Vector2 position)
     {
         // Kiểm tra xem BallPlayer có chạm vào giới hạn không
-        return position.x <= GameManager.Instance.BottomLeftLimit.position.x || position.x >= GameManager.Instance.TopRightLimit.position.x ||
-               position.y <= GameManager.Instance.BottomLeftLimit.position.y || position.y >= GameManager.Instance.TopRightLimit.position.y;
+        return position.x <= GameManager.instance.CurrentLevel.BottomLeftLimit.position.x || position.x >= GameManager.instance.CurrentLevel.TopRightLimit.position.x ||
+               position.y <= GameManager.instance.CurrentLevel.BottomLeftLimit.position.y || position.y >= GameManager.instance.CurrentLevel.TopRightLimit.position.y;
     }
 }

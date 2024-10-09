@@ -1,132 +1,75 @@
-﻿using UnityEngine;
-using GG.Infrastructure.Utils.Swipe;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
-    [SerializeField] private SwipeListener swipeListener;
-    [SerializeField] private Transform playerTransform;
-    [SerializeField] private float playerSpeed;
+    public static GameManager instance;
 
-    // Điểm giới hạn di chuyển
-    [SerializeField] private Transform bottomLeftLimit;
-    [SerializeField] private Transform topRightLimit;
+    public LevelManager CurrentLevel;
 
-    private Vector3 targetPosition;
-    private bool isMoving = false;  // Kiểm soát trạng thái di chuyển
-
-    public bool IsMoving { get => isMoving; set => isMoving = value; }
-    public Transform BottomLeftLimit { get => bottomLeftLimit; set => bottomLeftLimit = value; }
-    public Transform TopRightLimit { get => topRightLimit; set => topRightLimit = value; }
-
-    [SerializeField]private List<GameObject> ballsInPlay = new List<GameObject>(); // Danh sách các bóng đang chơi
+    public int LevelPlaying;
 
     private void Awake()
     {
-        // Singleton pattern
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    private void OnEnable()
-    {
-        swipeListener.OnSwipe.AddListener(OnSwipe);
-        targetPosition = playerTransform.position;  // Khởi tạo vị trí ban đầu
+        LevelPlaying = DataLevel1.GetCurrentLevel();
+
+        if (instance == null)
+            instance = this;
     }
 
-
-
-    private void OnSwipe(string swipe)
+    private void Start()
     {
-        // Chỉ xử lý vuốt khi nhân vật không di chuyển
-        if (!isMoving)
-        {
-            switch (swipe)
-            {
-                case "Left":
-                    targetPosition = new Vector3(bottomLeftLimit.position.x, playerTransform.position.y, playerTransform.position.z);
-                    break;
-                case "Right":
-                    targetPosition = new Vector3(topRightLimit.position.x, playerTransform.position.y, playerTransform.position.z);
-                    break;
-                case "Up":
-                    targetPosition = new Vector3(playerTransform.position.x, topRightLimit.position.y, playerTransform.position.z);
-                    break;
-                case "Down":
-                    targetPosition = new Vector3(playerTransform.position.x, bottomLeftLimit.position.y, playerTransform.position.z);
-                    break;
-            }
+        AdManager.instance.ShowBanner();
 
-            // Kiểm tra nếu điểm đến khác với vị trí hiện tại thì bắt đầu di chuyển
-            if (targetPosition != playerTransform.position)
-            {
-                isMoving = true;  // Khóa vuốt khi bắt đầu di chuyển
-            }
-        }
+        InitLevel();
     }
 
     private void Update()
     {
-        if (isMoving)
+
+    }
+
+    public void InitLevel()
+    {
+        GameObject LevelLoad = Resources.Load<GameObject>("Level/Level_" + LevelPlaying);
+
+        GameObject levelObj = Instantiate(LevelLoad, Vector3.zero, Quaternion.identity);
+
+        LevelManager CurrentLevel = levelObj.GetComponent<LevelManager>();
+
+        this.CurrentLevel = CurrentLevel;
+    }
+
+
+    public void IncreaseLevel(int level)
+    {
+        int ToltalLevel = DataLevel1.CountAmoutFolderInResources("Level");
+
+         Destroy(CurrentLevel.gameObject);
+
+        if (level == ToltalLevel)
         {
-            // Di chuyển nhân vật tới targetPosition
-            playerTransform.position = Vector3.MoveTowards(playerTransform.position, targetPosition, playerSpeed * Time.deltaTime);
+            LevelPlaying = 1;
+            DataLevel1.SetLevel(1);
+            InitLevel();
 
-            // Khi đã tới vị trí mục tiêu thì mở khóa vuốt
-            if (playerTransform.position == targetPosition)
-            {
-                isMoving = false;
-            }
+            UiGamePlay.instance.InitLevel();
+
+            return;
         }
-    }
 
-    private void OnDisable()
-    {
-        swipeListener.OnSwipe.RemoveListener(OnSwipe);
-    }
+        int currentLevel = 1;
+        level++;
 
+        LevelPlaying = level;
 
-    // Gọi hàm này khi một bóng được đưa vào lỗ
-    public void OnBallEnteredHole(GameObject ball)
-    {
-        if (ballsInPlay.Contains(ball))
+        if (level > currentLevel)
         {
-            ballsInPlay.Remove(ball); // Xóa bóng khỏi danh sách
-            Debug.Log(ball.name + " đã vào lỗ.");
+            DataLevel1.SetLevel(level);
         }
 
-        CheckWinCondition(); // Kiểm tra điều kiện thắng
-    }
-
-    // Thêm bóng vào danh sách khi bắt đầu game
-    public void AddBall(GameObject ball)
-    {
-        if (!ballsInPlay.Contains(ball))
-        {
-            ballsInPlay.Add(ball);
-        }
-    }
-
-    // Kiểm tra điều kiện thắng
-    private void CheckWinCondition()
-    {
-        if (ballsInPlay.Count == 0)
-        {
-            Debug.Log("Bạn đã thắng! Tất cả bóng đã vào lỗ.");
-            // Gọi phương thức thắng game, chẳng hạn như hiện thông báo hoặc chuyển cảnh
-        }
-    }
-
-    public void OnPlayerFellIntoHole()
-    {
-        Debug.Log("Bạn đã thua! BallPlayer đã rơi vào lỗ.");
-        // Thực hiện hành động thua, chẳng hạn như hiện thông báo hoặc chuyển cảnh
+        InitLevel();
+        UiGamePlay.instance.InitLevel();
     }
 }

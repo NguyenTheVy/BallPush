@@ -63,6 +63,7 @@ namespace GG.Infrastructure.Utils.Swipe
             {
                 SetDetectionMode(DirectionPresets.GetPresetByMode(SwipeDetectionMode));
             }
+
         }
 
         private void UpdateSensetivity()
@@ -88,6 +89,7 @@ namespace GG.Infrastructure.Utils.Swipe
                 CheckSwipeCancellation();
             }
         }
+
 
         private void CheckSwipeCancellation()
         {
