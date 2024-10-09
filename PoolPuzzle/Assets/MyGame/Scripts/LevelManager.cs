@@ -13,13 +13,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform topRightLimit;
 
     private Vector3 targetPosition;
-    private bool isMoving = false;  // Kiểm soát trạng thái di chuyển
+    [SerializeField] private bool isMoving = false;  // Kiểm soát trạng thái di chuyển
 
     public bool IsMoving { get => isMoving; set => isMoving = value; }
     public Transform BottomLeftLimit { get => bottomLeftLimit; set => bottomLeftLimit = value; }
     public Transform TopRightLimit { get => topRightLimit; set => topRightLimit = value; }
 
-    [SerializeField]private List<GameObject> ballsInPlay = new List<GameObject>(); // Danh sách các bóng đang chơi
+    [SerializeField] private List<GameObject> ballsInPlay = new List<GameObject>(); // Danh sách các bóng đang chơi
 
     private void Awake()
     {
@@ -38,18 +38,18 @@ public class LevelManager : MonoBehaviour
         {
             switch (swipe)
             {
-                
                 case "Left":
-                    targetPosition = new Vector3(bottomLeftLimit.position.x, playerTransform.position.y, playerTransform.position.z);
+                    targetPosition = new Vector3(bottomLeftLimit.localPosition.x, playerTransform.position.y, playerTransform.position.z);
                     break;
                 case "Right":
-                    targetPosition = new Vector3(topRightLimit.position.x, playerTransform.position.y, playerTransform.position.z);
+                    targetPosition = new Vector3(topRightLimit.localPosition.x, playerTransform.position.y, playerTransform.position.z);
+
                     break;
                 case "Up":
-                    targetPosition = new Vector3(playerTransform.position.x, topRightLimit.position.y, playerTransform.position.z);
+                    targetPosition = new Vector3(playerTransform.position.x, topRightLimit.localPosition.y, playerTransform.position.z);
                     break;
                 case "Down":
-                    targetPosition = new Vector3(playerTransform.position.x, bottomLeftLimit.position.y, playerTransform.position.z);
+                    targetPosition = new Vector3(playerTransform.position.x, bottomLeftLimit.localPosition.y, playerTransform.position.z);
                     break;
             }
 

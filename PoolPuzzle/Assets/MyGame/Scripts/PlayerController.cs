@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("BallRed"))
@@ -29,7 +30,6 @@ public class PlayerController : MonoBehaviour
             if (ballController != null)
             {
                 SoundManager.Instance.PlayFxSound(SoundManager.Instance.Ballhit);
-
                 ballController.MoveBall(hitDirection); // Gọi hàm di chuyển BallRed theo hướng thẳng
             }
 

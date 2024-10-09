@@ -7,7 +7,7 @@ public class ObstacleBall : MonoBehaviour
 {
     public float moveDistance = 5f; // Khoảng cách di chuyển
     public float moveDuration = 1f; // Thời gian di chuyển
-    private bool isMoving = false; // Biến để theo dõi trạng thái di chuyển
+    [SerializeField] private bool isMoving = false; // Biến để theo dõi trạng thái di chuyển
     void Start()
     {
         // Giả sử bạn có cách nào đó để khởi tạo bóng
@@ -18,7 +18,6 @@ public class ObstacleBall : MonoBehaviour
     {
         // Nếu đang di chuyển, không làm gì
         if (isMoving) return;
-
         isMoving = true; // Đánh dấu là đang di chuyển
         Vector3 targetPosition = transform.position + (Vector3)hitDirection * moveDistance;
 
