@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.PlayBGM(SoundManager.Instance.bgM);
         AdManager.instance.ShowBanner();
 
         InitLevel();

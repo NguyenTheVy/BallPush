@@ -25,12 +25,12 @@ public class SoundManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 
     private void Start()
     {
-        PlayBGM(bgM);
 
         SettingMusic(PlayerDataManager.GetMusic());
         SettingFxSound(PlayerDataManager.GetSound());

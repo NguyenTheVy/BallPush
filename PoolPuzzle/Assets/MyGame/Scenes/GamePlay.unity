@@ -174,7 +174,7 @@ MonoBehaviour:
   buttonclick: {fileID: 8300000, guid: fc13f4a25a2419a489b70e9737c02e74, type: 3}
   Ballhit: {fileID: 8300000, guid: 8f85fb5b4355b044e99f1cbb0dc82c2c, type: 3}
   Win: {fileID: 8300000, guid: 3a48927cd352127469f912894038edf6, type: 3}
-  Lose: {fileID: 0}
+  Lose: {fileID: 8300000, guid: 08ed6f189143d564d9908197fad92f4e, type: 3}
   ClosePopup: {fileID: 8300000, guid: 9c625b48d8580054fb679ca15303a25a, type: 3}
   OpenPopup: {fileID: 8300000, guid: 1a9d069d9af21b849a1c0d5eb59af428, type: 3}
   bgVol: 0

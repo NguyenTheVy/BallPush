@@ -10,7 +10,7 @@ public class PopupLose : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlayFxSound(SoundManager.Instance.Win);
+        SoundManager.Instance.PlayFxSound(SoundManager.Instance.Lose);
         btn_Replay.onClick.AddListener(OnReplay);
     }
 
