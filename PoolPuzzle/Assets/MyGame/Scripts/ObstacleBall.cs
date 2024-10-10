@@ -16,8 +16,12 @@ public class ObstacleBall : MonoBehaviour
 
     public void MoveBall(Vector2 hitDirection)
     {
+
         // Nếu đang di chuyển, không làm gì
         if (isMoving) return;
+
+        if (IsWithinLimits(transform.position)) return;
+
         isMoving = true; // Đánh dấu là đang di chuyển
         Vector3 targetPosition = transform.position + (Vector3)hitDirection * moveDistance;
 
@@ -25,14 +29,18 @@ public class ObstacleBall : MonoBehaviour
         transform.DOMove(targetPosition, moveDuration).OnUpdate(() =>
         {
             // Kiểm tra nếu BallRed đã chạm vào giới hạn
-            /*if (!IsWithinLimits(transform.position))
+            if (IsWithinLimits(transform.position))
             {
+                Debug.Log("ra ngoai");
                 StopBallMovement(); // Dừng lại nếu ra ngoài giới hạn
-            }*/
+                return;
+            }
+
             if (IsInHoleLayer(transform.position))
             {
                 GameManager.instance.CurrentLevel.OnBallEnteredHole(this.gameObject);
                 DisableBall(); // Dừng nếu vào vùng lỗ
+                return;
             }
         }).OnComplete(() =>
         {
@@ -42,9 +50,17 @@ public class ObstacleBall : MonoBehaviour
 
     private bool IsWithinLimits(Vector3 position)
     {
-        // Kiểm tra xem vị trí có nằm trong giới hạn không
-        return position.x >= GameManager.instance.CurrentLevel.BottomLeftLimit.position.x && position.x <= GameManager.instance.CurrentLevel.TopRightLimit.position.x &&
-               position.y >= GameManager.instance.CurrentLevel.BottomLeftLimit.position.y && position.y <= GameManager.instance.CurrentLevel.TopRightLimit.position.y;
+
+        // Lấy tọa độ của giới hạn
+        float minX = GameManager.instance.CurrentLevel.BottomLeftLimit.position.x; // Tọa độ x của điểm dưới cùng bên trái cộng thêm 1 đơn vị
+        float maxX = GameManager.instance.CurrentLevel.TopRightLimit.position.x - 0.01f;    // Tọa độ x của điểm trên cùng bên phải trừ đi 1 đơn vị
+        float minY = GameManager.instance.CurrentLevel.BottomLeftLimit.position.y + 0.05f;  // Tọa độ y của điểm dưới cùng bên trái cộng thêm 1 đơn vị
+        float maxY = GameManager.instance.CurrentLevel.TopRightLimit.position.y - 0.01f;    // Tọa độ y của điểm trên cùng bên phải trừ đi 1 đơn vị
+
+        // Kiểm tra xem vị trí có nằm ngoài giới hạn không
+        return position.x < minX || position.x > maxX ||
+               position.y < minY || position.y > maxY;
+
     }
 
     private bool IsInHoleLayer(Vector3 position)
@@ -77,7 +93,7 @@ public class ObstacleBall : MonoBehaviour
         // Thực hiện tween scale về 0
         transform.DOScale(0, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
         {
-          // Gọi hàm khi bóng vào lỗ
+            // Gọi hàm khi bóng vào lỗ
             gameObject.SetActive(false); // Vô hiệu hóa BallRed
             Debug.Log("BallRed đã bị tắt do vào vùng lỗ.");
         });

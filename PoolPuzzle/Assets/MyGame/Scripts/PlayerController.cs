@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
             // Đặt trạng thái IsMoving của GameManager
             GameManager.instance.CurrentLevel.IsMoving = false;
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
