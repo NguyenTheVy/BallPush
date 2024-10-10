@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening; // Thêm thư viện DoTween
+using Unity.VisualScripting;
 
 public class ObstacleBall : MonoBehaviour
 {
     public float moveDistance = 7f; // Khoảng cách di chuyển
     public float moveDuration = 1f; // Thời gian di chuyển
     [SerializeField] private bool isMoving = false; // Biến để theo dõi trạng thái di chuyển
+
+    Tween T_move;
     void Start()
     {
         // Giả sử bạn có cách nào đó để khởi tạo bóng
@@ -26,15 +29,8 @@ public class ObstacleBall : MonoBehaviour
         Vector3 targetPosition = transform.position + (Vector3)hitDirection * moveDistance;
 
         // Di chuyển tới vị trí mục tiêu
-        transform.DOMove(targetPosition, moveDuration).OnUpdate(() =>
+        T_move = transform.DOMove(targetPosition, moveDuration).OnUpdate(() =>
         {
-            // Kiểm tra nếu BallRed đã chạm vào giới hạn
-            if (IsWithinLimits(transform.position))
-            {
-                Debug.Log("ra ngoai");
-                StopBallMovement(); // Dừng lại nếu ra ngoài giới hạn
-                return;
-            }
 
             if (IsInHoleLayer(transform.position))
             {
@@ -42,6 +38,16 @@ public class ObstacleBall : MonoBehaviour
                 DisableBall(); // Dừng nếu vào vùng lỗ
                 return;
             }
+
+            // Kiểm tra nếu BallRed đã chạm vào giới hạn
+            if (IsWithinLimits(transform.position))
+            {
+                Debug.Log("ra ngoai");
+                StopBallMovement(); // Dừng lại nếu ra ngoài giới hạn
+                return;
+            }
+            Debug.Log("check");
+
         }).OnComplete(() =>
         {
             isMoving = false; // Đánh dấu không còn di chuyển nữa
@@ -80,8 +86,8 @@ public class ObstacleBall : MonoBehaviour
 
     private void StopBallMovement()
     {
+        T_move?.Kill();
         // Dừng tất cả các tween đang chạy
-        DOTween.Kill(transform); // Dừng tất cả các tween cho đối tượng này
         isMoving = false; // Đánh dấu không còn di chuyển nữa
         Debug.Log("BallRed đã dừng lại do va chạm với giới hạn.");
     }

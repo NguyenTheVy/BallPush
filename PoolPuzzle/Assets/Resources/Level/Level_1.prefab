@@ -489,7 +489,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &7255585202780036252
 MonoBehaviour:
@@ -690,6 +690,10 @@ PrefabInstance:
     - target: {fileID: 5704440977196895160, guid: 90cb0da17d1e8bd4ba1be1f0717da4d9, type: 3}
       propertyPath: m_Name
       value: Hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267830370444126470, guid: 90cb0da17d1e8bd4ba1be1f0717da4d9, type: 3}
+      propertyPath: m_Radius
+      value: 0.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

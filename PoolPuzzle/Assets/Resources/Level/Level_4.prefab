@@ -165,7 +165,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5819024728856044718
 MonoBehaviour:
@@ -377,7 +377,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5647671
+  m_Radius: 0.65
 --- !u!1 &2815467259101976830
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +534,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &6400260939678011634
 MonoBehaviour:
@@ -739,7 +739,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2546021168161453972
 MonoBehaviour:
@@ -1057,7 +1057,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5647671
+  m_Radius: 0.65
 --- !u!1 &8385357229845747464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1170,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &6760596224038431164
 MonoBehaviour:
@@ -1351,7 +1351,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5647671
+  m_Radius: 0.65
 --- !u!1 &8667366292094546400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,7 +1471,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5647671
+  m_Radius: 0.65
 --- !u!1 &8826349425141074512
 GameObject:
   m_ObjectHideFlags: 0
