@@ -323,7 +323,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.06, y: 0.36, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7896956532980138967}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 270527015128681332}
   - component: {fileID: 4856632504123252894}
   - component: {fileID: 7493121044617601411}
-  - component: {fileID: 4122785324939207104}
+  - component: {fileID: 1879489526923022620}
   m_Layer: 0
   m_Name: Ball (1)
   m_TagString: BallRed
@@ -494,7 +494,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.06, y: 1.15, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7896956532980138967}
@@ -593,8 +593,8 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
---- !u!61 &4122785324939207104
-BoxCollider2D:
+--- !u!58 &1879489526923022620
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -625,19 +625,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83, y: 0.85}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.031324085, y: 0.011746515}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.40542242
 --- !u!1 &3700504049849683500
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,7 +906,7 @@ GameObject:
   - component: {fileID: 8617920803462586059}
   - component: {fileID: 1859944236047391957}
   - component: {fileID: 2057901586880874379}
-  - component: {fileID: 7736326267328585482}
+  - component: {fileID: 9050658572602207360}
   m_Layer: 0
   m_Name: Ball (2)
   m_TagString: BallRed
@@ -934,7 +924,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.74, y: 0.75, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7896956532980138967}
@@ -1033,8 +1023,8 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
---- !u!61 &7736326267328585482
-BoxCollider2D:
+--- !u!58 &9050658572602207360
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1065,19 +1055,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83, y: 0.85}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.011746798, y: 0.0430706}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.3936762
 --- !u!1 &6749435883739930102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,7 +1165,7 @@ GameObject:
   - component: {fileID: 5320730243885655315}
   - component: {fileID: 474322338936131806}
   - component: {fileID: 633680147939583819}
-  - component: {fileID: 1734009078900672301}
+  - component: {fileID: 6371962562270404090}
   m_Layer: 0
   m_Name: Ball
   m_TagString: BallRed
@@ -1203,7 +1183,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.06, y: -0.84, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7896956532980138967}
@@ -1302,8 +1282,8 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
---- !u!61 &1734009078900672301
-BoxCollider2D:
+--- !u!58 &6371962562270404090
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1334,16 +1314,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83, y: 0.85}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.029921105}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.3950789
