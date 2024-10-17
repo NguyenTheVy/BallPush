@@ -133,6 +133,7 @@ MonoBehaviour:
   playerTransform: {fileID: 1728932048593684491}
   playerSpeed: 9
   isEndGame: 0
+  isSpawnTrailfx: 0
   bottomLeftLimit: {fileID: 3115529480135695977}
   topRightLimit: {fileID: 6252025436651813157}
   isMoving: 0
@@ -343,7 +344,8 @@ Transform:
   m_LocalPosition: {x: -0.44, y: -0.06, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 4871358871754360202}
   m_Father: {fileID: 2229941686351484794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6699886904178654786
@@ -480,7 +482,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!1 &3825208770294505034
 GameObject:
@@ -755,3 +757,65 @@ Transform:
   - {fileID: 2448267494626632731}
   m_Father: {fileID: 8784865305349853063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6713206694763970697
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1728932048593684491}
+    m_Modifications:
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544407134491083010, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+      propertyPath: m_Name
+      value: SpikyFireTrail
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+--- !u!4 &4871358871754360202 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
+  m_PrefabInstance: {fileID: 6713206694763970697}
+  m_PrefabAsset: {fileID: 0}

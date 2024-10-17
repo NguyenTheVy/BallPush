@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 
     public int LevelPlaying;
 
+
+    public ParticleSystem Traifx;
+
     private void Awake()
     {
         LevelPlaying = DataLevel1.GetCurrentLevel();

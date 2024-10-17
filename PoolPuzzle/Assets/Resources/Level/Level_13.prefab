@@ -281,9 +281,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0034087896}
+  m_Offset: {x: 0.000000007807774, y: 0.06549636}
   serializedVersion: 2
-  m_Radius: 0.65
+  m_Radius: 0.58791244
 --- !u!1 &2166289430017314001
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,9 +565,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0034087896}
+  m_Offset: {x: 0, y: 0.054409355}
   serializedVersion: 2
-  m_Radius: 0.65
+  m_Radius: 0.5989994
 --- !u!1 &2926261863805481878
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,9 +685,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0034087896}
+  m_Offset: {x: -0.000000008865127, y: 0.07436609}
   serializedVersion: 2
-  m_Radius: 0.65
+  m_Radius: 0.5790426
 --- !u!1 &3855044764712656418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,9 +1248,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0034087896}
+  m_Offset: {x: 0, y: 0.07214859}
   serializedVersion: 2
-  m_Radius: 0.65
+  m_Radius: 0.58126014
 --- !u!1 &7597899637029164344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,7 +1464,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!1 &8123048202616188472
 GameObject:
@@ -1515,6 +1515,7 @@ MonoBehaviour:
   playerTransform: {fileID: 8855369159835749586}
   playerSpeed: 9
   isEndGame: 0
+  isSpawnTrailfx: 0
   bottomLeftLimit: {fileID: 5158646922049910716}
   topRightLimit: {fileID: 2107562707331697297}
   isMoving: 0

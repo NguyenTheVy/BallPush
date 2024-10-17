@@ -23,7 +23,7 @@ public class ObstacleBall : MonoBehaviour
         // Nếu đang di chuyển, không làm gì
         if (isMoving) return;
 
-        if (IsWithinLimits(transform.position)) return;
+        //if (IsWithinLimits(transform.position)) return;
 
         isMoving = true; // Đánh dấu là đang di chuyển
         Vector3 targetPosition = transform.position + (Vector3)hitDirection * moveDistance;
@@ -40,12 +40,12 @@ public class ObstacleBall : MonoBehaviour
             }
 
             // Kiểm tra nếu BallRed đã chạm vào giới hạn
-            if (IsWithinLimits(transform.position))
+/*            if (IsWithinLimits(transform.position))
             {
                 Debug.Log("ra ngoai");
                 StopBallMovement(); // Dừng lại nếu ra ngoài giới hạn
                 return;
-            }
+            }*/
             Debug.Log("check");
 
         }).OnComplete(() =>

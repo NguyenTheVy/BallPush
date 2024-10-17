@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using GG.Infrastructure.Utils.Swipe;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float playerSpeed;
 
     public bool isEndGame = false;
+    public bool isSpawnTrailfx = false;
+
 
     // Điểm giới hạn di chuyển
     [SerializeField] private Transform bottomLeftLimit;
@@ -67,6 +70,12 @@ public class LevelManager : MonoBehaviour
     {
         if (isMoving)
         {
+            if(!isSpawnTrailfx)
+            {
+                SpawnTrail();
+                isSpawnTrailfx = true;
+            }
+
             // Di chuyển nhân vật tới targetPosition
             playerTransform.position = Vector3.MoveTowards(playerTransform.position, targetPosition, playerSpeed * Time.deltaTime);
 
@@ -74,6 +83,7 @@ public class LevelManager : MonoBehaviour
             if (playerTransform.position == targetPosition)
             {
                 isMoving = false;
+                isSpawnTrailfx = false;
             }
         }
     }
@@ -83,6 +93,17 @@ public class LevelManager : MonoBehaviour
         swipeListener.OnSwipe.RemoveListener(OnSwipe);
     }
 
+    public void SpawnTrail()
+    {
+        if (GameManager.instance.Traifx == null) return;
+
+        ParticleSystem Trail = Instantiate(GameManager.instance.Traifx);
+
+        Trail.transform.SetParent(playerTransform);
+        Trail.transform.localPosition = Vector3.zero;
+        Trail.transform.localScale = Vector3.one;
+
+    }
 
     // Gọi hàm này khi một bóng được đưa vào lỗ
     public void OnBallEnteredHole(GameObject ball)
