@@ -213,6 +213,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &3820752957167723078
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -396,9 +397,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.034471005}
+  m_Offset: {x: 0, y: -0.21}
   serializedVersion: 2
-  m_Radius: 0.5440886
+  m_Radius: 0.4238237
 --- !u!1 &3769748125997932523
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,9 +571,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000000083241645, y: -0.06982817}
+  m_Offset: {x: 0.0000000083241645, y: -0.25}
   serializedVersion: 2
-  m_Radius: 0.5315155
+  m_Radius: 0.4238237
 --- !u!1 &4633631417157023699
 GameObject:
   m_ObjectHideFlags: 0
@@ -916,6 +917,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &4762810910405156508
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1111,6 +1113,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &2985338288113793437
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1316,9 +1319,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02054628, y: -0.055587888}
+  m_Offset: {x: -0.02054628, y: -0.27}
   serializedVersion: 2
-  m_Radius: 0.51820964
+  m_Radius: 0.4238237
 --- !u!1001 &6022441675373540217
 PrefabInstance:
   m_ObjectHideFlags: 0

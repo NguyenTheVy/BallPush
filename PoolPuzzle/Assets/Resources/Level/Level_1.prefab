@@ -267,6 +267,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!61 &396185985095983930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -716,9 +717,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0034087896}
+  m_Offset: {x: 0.005795397, y: -0.2}
   serializedVersion: 2
-  m_Radius: 0.65
+  m_Radius: 0.44136527
 --- !u!1 &8222642828428050405
 GameObject:
   m_ObjectHideFlags: 0

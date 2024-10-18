@@ -117,9 +117,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.045539588}
+  m_Offset: {x: 0, y: -0.24}
   serializedVersion: 2
-  m_Radius: 0.60786915
+  m_Radius: 0.4238237
 --- !u!1 &1432834334282542236
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,9 +237,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000007543434, y: 0.06327892}
+  m_Offset: {x: -0.000000007543434, y: -0.28}
   serializedVersion: 2
-  m_Radius: 0.59012985
+  m_Radius: 0.4238237
 --- !u!1 &1591103246146577401
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,9 +441,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.04997447}
+  m_Offset: {x: 0, y: -0.22}
   serializedVersion: 2
-  m_Radius: 0.60343426
+  m_Radius: 0.4238237
 --- !u!1 &2535633499135267416
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,9 +561,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000007543439, y: 0.06327896}
+  m_Offset: {x: 0.000000007543439, y: -0.29}
   serializedVersion: 2
-  m_Radius: 0.5901299
+  m_Radius: 0.4238237
 --- !u!1 &2568878458723836977
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +747,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &648383825086873252
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -911,6 +912,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &4689874108698534294
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1353,6 +1355,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &1938354932870055267
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1570,6 +1573,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &595909610056057576
 CircleCollider2D:
   m_ObjectHideFlags: 0

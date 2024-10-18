@@ -10,11 +10,14 @@ public class ObstacleBall : MonoBehaviour
     public float moveDuration = 1f; // Thời gian di chuyển
     [SerializeField] private bool isMoving = false; // Biến để theo dõi trạng thái di chuyển
 
+    public CircleCollider2D circleCollider2D;
+
     Tween T_move;
     void Start()
     {
         // Giả sử bạn có cách nào đó để khởi tạo bóng
         GameManager.instance.CurrentLevel.AddBall(this.gameObject);
+        circleCollider2D = GetComponent<CircleCollider2D>();
     }
 
     public void MoveBall(Vector2 hitDirection)
@@ -95,7 +98,7 @@ public class ObstacleBall : MonoBehaviour
     private void DisableBall()
     {
         StopBallMovement(); // Dừng tween nếu vào vùng lỗ
-
+        circleCollider2D.enabled = false;
         // Thực hiện tween scale về 0
         transform.DOScale(0, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
         {

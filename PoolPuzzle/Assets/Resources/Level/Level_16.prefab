@@ -117,9 +117,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0832358}
+  m_Offset: {x: 0, y: -0.24}
   serializedVersion: 2
-  m_Radius: 0.57017297
+  m_Radius: 0.42
 --- !u!1 &1098407918195545311
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,9 +321,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000009922468, y: 0.08323571}
+  m_Offset: {x: 0.000000009922468, y: -0.24}
   serializedVersion: 2
-  m_Radius: 0.570173
+  m_Radius: 0.42
 --- !u!1 &2541572550382889506
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,9 +486,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.07880077}
+  m_Offset: {x: 0, y: -0.24}
   serializedVersion: 2
-  m_Radius: 0.57460797
+  m_Radius: 0.42
 --- !u!1 &3242587848061170258
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +649,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &8593135113174245828
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -801,9 +802,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000008865127, y: 0.07436609}
+  m_Offset: {x: -0.000000008865127, y: -0.24}
   serializedVersion: 2
-  m_Radius: 0.5790426
+  m_Radius: 0.42
 --- !u!1 &4495085466079069658
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +934,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &4550053058275302677
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1097,6 +1099,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &5023282194189842396
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1528,9 +1531,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000008865127, y: 0.07436609}
+  m_Offset: {x: 0.000000008865127, y: -0.24}
   serializedVersion: 2
-  m_Radius: 0.5790426
+  m_Radius: 0.42
 --- !u!1 &8741569045781949273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,6 +1694,7 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
+  circleCollider2D: {fileID: 0}
 --- !u!58 &8547979396319703148
 CircleCollider2D:
   m_ObjectHideFlags: 0
