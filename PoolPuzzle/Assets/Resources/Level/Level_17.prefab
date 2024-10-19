@@ -163,7 +163,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.000000008600792, y: -0.24}
+  m_Offset: {x: 0.000000008600792, y: -0.29}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &1190212136505153962
@@ -283,7 +283,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.24}
+  m_Offset: {x: 0, y: -0.29}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &1423790560581877857
@@ -568,7 +568,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000009922468, y: -0.24}
+  m_Offset: {x: -0.000000009922468, y: -0.29}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &2547248615692610208
@@ -688,7 +688,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000009393789, y: -0.24}
+  m_Offset: {x: -0.000000009393789, y: -0.29}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &3554896867341197519
@@ -1142,7 +1142,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.24}
+  m_Offset: {x: 0, y: -0.29}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &6039710702822345044
@@ -1262,7 +1262,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.24}
+  m_Offset: {x: 0, y: -0.29}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &7758466052921218783

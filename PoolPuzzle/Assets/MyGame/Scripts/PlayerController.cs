@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
             // Lấy hướng tác động từ player tới BallRed
             Vector2 hitDirection = collision.transform.position - transform.position;
 
+
+
             // Chọn trục di chuyển
             if (Mathf.Abs(hitDirection.x) > Mathf.Abs(hitDirection.y))
             {
@@ -30,6 +32,23 @@ public class PlayerController : MonoBehaviour
             else
             {
                 hitDirection = new Vector2(0, hitDirection.y > 0 ? 1 : -1); // Di chuyển theo trục Y
+            }
+
+            if(hitDirection.x > 0)
+            {
+                transform.position = new Vector3(collision.transform.position.x - 0.4f, collision.transform.position.y, 0);
+            }
+            else if(hitDirection.x < 0)
+            {
+                transform.position = new Vector3(collision.transform.position.x + 0.4f, collision.transform.position.y, 0);
+            }
+            else if (hitDirection.y > 0)
+            {
+                transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y - 0.4f, 0);
+            }
+            else if (hitDirection.y < 0)
+            {
+                transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y + 0.4f, 0);
             }
 
             // Gọi hàm MoveBall từ script ObstacleBallController và truyền hướng va chạm
