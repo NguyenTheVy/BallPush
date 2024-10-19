@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using GG.Infrastructure.Utils.Swipe;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
+
 
 public class LevelManager : MonoBehaviour
 {

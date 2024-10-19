@@ -844,13 +844,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   adTest: 0
-  Banner_ID: ca-app-pub-1866944813898601/2133413828
+  Banner_ID: ca-app-pub-1866944813898601/8263661142
   Banner_ID_IOS: 
-  Inter_ID: ca-app-pub-1866944813898601/5286463843
+  Inter_ID: ca-app-pub-1866944813898601/6000659577
   Inter_ID_IOS: 
-  Reward_ID: app-pub-1866944813898601/7421672599
+  Reward_ID: ca-app-pub-1866944813898601/3262615903
   Reward_ID_IOS: 
-  Open_ID: ca-app-pub-1866944813898601/7765014451
+  Open_ID: ca-app-pub-1866944813898601/8463171382
   Open_ID_IOS: 
 --- !u!1 &2135108899
 GameObject:
