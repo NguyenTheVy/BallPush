@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1080080495178224836}
@@ -111,8 +111,8 @@ Transform:
   m_GameObject: {fileID: 1498908672873488461}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4987142, y: 1.91, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -0.44, y: 1.83, z: 0}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1080080495178224836}
@@ -201,7 +201,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022174194, y: -0.21}
+  m_Offset: {x: -0.022174194, y: -0.34}
   serializedVersion: 2
   m_Radius: 0.42382365
 --- !u!1 &1737223032623187235
@@ -274,7 +274,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.44, y: -0.06, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6120143145953429047}
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 2784400652771448867}
   - component: {fileID: 6941962344680215783}
   - component: {fileID: 7567047481600925524}
-  - component: {fileID: 7330028183134631927}
+  - component: {fileID: 1924055270860167052}
   m_Layer: 0
   m_Name: Ball (1)
   m_TagString: BallRed
@@ -531,7 +531,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.45, y: -0.83, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1080080495178224836}
@@ -631,8 +631,8 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
---- !u!61 &7330028183134631927
-BoxCollider2D:
+--- !u!58 &1924055270860167052
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -663,19 +663,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83, y: 0.85}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.012240416, y: 0.03536138}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.40187904
 --- !u!1 &6343339531161330922
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,8 +693,8 @@ Transform:
   m_GameObject: {fileID: 6343339531161330922}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.4987142, y: -1.57, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -0.44, y: -1.51, z: 0}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1080080495178224836}
@@ -793,7 +783,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.23}
+  m_Offset: {x: 0, y: -0.34}
   serializedVersion: 2
   m_Radius: 0.4238237
 --- !u!1 &6414156078213377119
@@ -839,7 +829,7 @@ GameObject:
   - component: {fileID: 535114779678182524}
   - component: {fileID: 2681436638355924460}
   - component: {fileID: 220334518098329954}
-  - component: {fileID: 4404820983168335957}
+  - component: {fileID: 4471135822325069240}
   m_Layer: 0
   m_Name: Ball
   m_TagString: BallRed
@@ -857,7 +847,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.45, y: 0.74, z: 0}
-  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1080080495178224836}
@@ -957,8 +947,8 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
---- !u!61 &4404820983168335957
-BoxCollider2D:
+--- !u!58 &4471135822325069240
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -989,19 +979,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83, y: 0.85}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0.033688687}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.39131132
 --- !u!1 &6730779586376169337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,23 +1045,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.666667
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.666667
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.666667
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.97777784
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13333334
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2211429037420807427, guid: 0f1c7a6f9ba54f44abdb9957591ff232, type: 3}
       propertyPath: m_LocalPosition.z

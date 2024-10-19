@@ -39,6 +39,8 @@ public class ObstacleBall : MonoBehaviour
             {
                 GameManager.instance.CurrentLevel.OnBallEnteredHole(this.gameObject);
                 DisableBall(); // Dừng nếu vào vùng lỗ
+
+                Debug.Log("vao lo");
                 return;
             }
 

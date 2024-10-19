@@ -717,7 +717,7 @@ GameObject:
   - component: {fileID: 8354392293252312256}
   - component: {fileID: 6878256418388004232}
   - component: {fileID: 7604417577070233122}
-  - component: {fileID: 7621479351467348651}
+  - component: {fileID: 1327096439321809781}
   m_Layer: 0
   m_Name: Ball (1)
   m_TagString: BallRed
@@ -834,8 +834,9 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
---- !u!61 &7621479351467348651
-BoxCollider2D:
+  circleCollider2D: {fileID: 0}
+--- !u!58 &1327096439321809781
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -866,19 +867,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83, y: 0.85}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.024216143, y: 0.033902626}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.4153135
 --- !u!1 &8739645852207046024
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +882,7 @@ GameObject:
   - component: {fileID: 7975475610656439439}
   - component: {fileID: 1266161321758615586}
   - component: {fileID: 1823989157134043224}
-  - component: {fileID: 8811919566228512443}
+  - component: {fileID: 8835190192434319058}
   m_Layer: 0
   m_Name: Ball
   m_TagString: BallRed
@@ -1008,8 +999,9 @@ MonoBehaviour:
   moveDistance: 5
   moveDuration: 1
   isMoving: 0
---- !u!61 &8811919566228512443
-BoxCollider2D:
+  circleCollider2D: {fileID: 0}
+--- !u!58 &8835190192434319058
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1040,19 +1032,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83, y: 0.85}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.023378532, y: 0.03652894}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.41184956
 --- !u!1001 &5549489806194676914
 PrefabInstance:
   m_ObjectHideFlags: 0

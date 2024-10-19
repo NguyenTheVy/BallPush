@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 90015248898770973}
   - component: {fileID: 9059504203083598032}
   - component: {fileID: 3915705494797155729}
-  - component: {fileID: 396185985095983930}
+  - component: {fileID: 4341103169856317783}
   m_Layer: 0
   m_Name: Ball
   m_TagString: BallRed
@@ -268,8 +268,8 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
---- !u!61 &396185985095983930
-BoxCollider2D:
+--- !u!58 &4341103169856317783
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -300,19 +300,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83, y: 0.85}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.012805065, y: 0.034146875}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.40365815
 --- !u!1 &3732180019225640639
 GameObject:
   m_ObjectHideFlags: 0
