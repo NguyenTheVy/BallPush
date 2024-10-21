@@ -84,6 +84,7 @@ public class LevelManager : MonoBehaviour
             {
                 isMoving = false;
                 isSpawnTrailfx = false;
+                playerTransform.GetComponent<PlayerController>().isLimit = false;
             }
         }
     }

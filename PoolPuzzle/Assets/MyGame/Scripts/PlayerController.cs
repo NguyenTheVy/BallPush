@@ -7,10 +7,22 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;
 
+    public bool isLimit = false;
+
     private void Start()
     {
         _rb = transform.GetComponent<Rigidbody2D>();
     }
+
+    private void Update()
+    {
+        if (IsAtLimits(transform.position) && !isLimit)
+        {
+            isLimit = true;
+            SoundManager.Instance.PlayFxSound(SoundManager.Instance.HitBoard);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("BallRed"))
@@ -34,11 +46,11 @@ public class PlayerController : MonoBehaviour
                 hitDirection = new Vector2(0, hitDirection.y > 0 ? 1 : -1); // Di chuyển theo trục Y
             }
 
-            if(hitDirection.x > 0)
+            if (hitDirection.x > 0)
             {
                 transform.position = new Vector3(collision.transform.position.x - 0.4f, collision.transform.position.y, 0);
             }
-            else if(hitDirection.x < 0)
+            else if (hitDirection.x < 0)
             {
                 transform.position = new Vector3(collision.transform.position.x + 0.4f, collision.transform.position.y, 0);
             }

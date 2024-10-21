@@ -17,6 +17,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip Lose;
     public AudioClip ClosePopup;
     public AudioClip OpenPopup;
+    public AudioClip HitBoard;
+
 
     public float bgVol;
 
