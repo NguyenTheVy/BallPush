@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d842de8279be77041a39ea37e2ff2892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adTest: 0
+  adTest: 1
   Banner_ID: ca-app-pub-1866944813898601/8263661142
   Banner_ID_IOS: 
   Inter_ID: ca-app-pub-1866944813898601/6000659577
