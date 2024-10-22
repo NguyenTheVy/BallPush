@@ -202,7 +202,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015521869, y: -0.43}
+  m_Offset: {x: -0.015521869, y: -0.6}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &2472039884830519149
@@ -322,7 +322,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.43}
+  m_Offset: {x: 0, y: -0.6}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &3861773604531461026
@@ -813,6 +813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4634a5c7e7913674bb7c2da3696d4fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLimit: 0
 --- !u!61 &598320131243186936
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1104,7 +1105,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.43}
+  m_Offset: {x: 0, y: -0.6}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &6720393633084074119
@@ -1224,7 +1225,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000009393807, y: -0.43}
+  m_Offset: {x: -0.000000009393807, y: -0.6}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &7527731975056364217
@@ -1562,7 +1563,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0000000080721, y: -0.43}
+  m_Offset: {x: 0.0000000080721, y: -0.6}
   serializedVersion: 2
   m_Radius: 0.42
 --- !u!1 &9200564738514237005
