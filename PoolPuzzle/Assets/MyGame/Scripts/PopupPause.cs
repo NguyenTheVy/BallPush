@@ -24,7 +24,6 @@ public class PopupPause : AnimLeftRight
         btn_toogleMusic.onClick.AddListener(OnToogleMusic);
         btn_sfx.onClick.AddListener(OnToogleSfx);
 
-        btn_BackGame.onClick.AddListener(OnBackGame);
         btn_ok.onClick.AddListener(OnClosePopup);
 
 

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,8 +36,16 @@ public class UiGamePlay : MonoBehaviour
         btn_Skip.onClick.AddListener(OnSkipGame);
         btn_Replay.onClick.AddListener(OnReplay);
         InitLevel();
+
+        AimBtn();
     }
 
+
+    public void AimBtn()
+    {
+        btn_Skip.transform.localScale = Vector3.one;
+        btn_Skip.transform.DOScale(1.1f, 0.5f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
+    }
     private void OnReplay()
     {
         SceneManager.LoadScene(1);

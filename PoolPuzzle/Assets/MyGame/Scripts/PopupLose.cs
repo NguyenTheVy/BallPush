@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,11 @@ public class PopupLose : MonoBehaviour
     {
         SoundManager.Instance.PlayFxSound(SoundManager.Instance.Lose);
         btn_Replay.onClick.AddListener(OnReplay);
+    }
+    private void OnEnable()
+    {
+        btn_Replay.transform.localScale = Vector3.one;
+        btn_Replay.transform.DOScale(1.1f, 0.5f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
     }
 
     private void OnReplay()
@@ -33,5 +39,10 @@ public class PopupLose : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
+    }
+
+    private void OnDisable()
+    {
+        DOTween.Kill(transform);
     }
 }

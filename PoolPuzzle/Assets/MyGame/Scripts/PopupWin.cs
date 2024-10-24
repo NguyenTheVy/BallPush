@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,14 @@ public class PopupWin : MonoBehaviour
     private void OnEnable()
     {
         SoundManager.Instance.PlayFxSound(SoundManager.Instance.Win);
+
+        AimBtn();
+
+    }
+    public void AimBtn()
+    {
+        btn_nextLevel.transform.localScale = Vector3.one;
+        btn_nextLevel.transform.DOScale(1.1f, 0.5f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
     }
 
     private void OnNextLevel()
@@ -24,5 +33,10 @@ public class PopupWin : MonoBehaviour
 
         SoundManager.Instance.PlayFxSound(SoundManager.Instance.ClosePopup);
         gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        DOTween.Kill(transform);
     }
 }
