@@ -12,6 +12,8 @@ public class ObstacleBall : MonoBehaviour
 
     public CircleCollider2D circleCollider2D;
 
+    Transform hole;
+
     Tween T_move;
     void Start()
     {
@@ -82,7 +84,7 @@ public class ObstacleBall : MonoBehaviour
         {
             if (collider.gameObject.layer == holeLayer)
             {
-                transform.position = collider.gameObject.transform.position;
+                hole = collider.transform;
                 return true; // Nếu chạm vào layer "Hole"
             }
         }
@@ -102,12 +104,17 @@ public class ObstacleBall : MonoBehaviour
         StopBallMovement(); // Dừng tween nếu vào vùng lỗ
         circleCollider2D.enabled = false;
         // Thực hiện tween scale về 0
-        transform.DOScale(0, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
+
+        transform.DOMove(hole.transform.position, 0.2f).OnComplete(()=>
         {
-            // Gọi hàm khi bóng vào lỗ
-            gameObject.SetActive(false); // Vô hiệu hóa BallRed
-            GameManager.instance.CurrentLevel.OnBallEnteredHole(this.gameObject);
+            transform.DOScale(0, 0.5f).SetEase(Ease.OutBounce).OnComplete(() =>
+            {
+                // Gọi hàm khi bóng vào lỗ
+                gameObject.SetActive(false); // Vô hiệu hóa BallRed
+                GameManager.instance.CurrentLevel.OnBallEnteredHole(this.gameObject);
+            });
         });
+
     }
 
 

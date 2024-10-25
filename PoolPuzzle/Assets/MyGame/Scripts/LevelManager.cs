@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using GG.Infrastructure.Utils.Swipe;
 using System.Collections.Generic;
-
+using DG.Tweening;
 
 public class LevelManager : MonoBehaviour
 {
@@ -45,15 +45,18 @@ public class LevelManager : MonoBehaviour
             {
                 case "Left":
                     targetPosition = new Vector3(bottomLeftLimit.localPosition.x, playerTransform.position.y, playerTransform.position.z);
+                    playerTransform.DOScaleY(0.25f, 0.1f);
                     break;
                 case "Right":
                     targetPosition = new Vector3(topRightLimit.localPosition.x, playerTransform.position.y, playerTransform.position.z);
-
+                    playerTransform.DOScaleY(0.25f, 0.1f);
                     break;
                 case "Up":
+                    playerTransform.DOScaleX(0.25f, 0.1f);
                     targetPosition = new Vector3(playerTransform.position.x, topRightLimit.localPosition.y, playerTransform.position.z);
                     break;
                 case "Down":
+                    playerTransform.DOScaleX(0.25f, 0.1f);
                     targetPosition = new Vector3(playerTransform.position.x, bottomLeftLimit.localPosition.y, playerTransform.position.z);
                     break;
             }
@@ -70,7 +73,7 @@ public class LevelManager : MonoBehaviour
     {
         if (isMoving)
         {
-            if(!isSpawnTrailfx)
+            if (!isSpawnTrailfx)
             {
                 SpawnTrail();
                 isSpawnTrailfx = true;

@@ -7,11 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;
 
+    public Animator animator;
+
     public bool isLimit = false;
 
     private void Start()
     {
         _rb = transform.GetComponent<Rigidbody2D>();
+        animator = transform.GetComponent<Animator>();
     }
 
     private void Update()
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
         if (IsAtLimits(transform.position) && !isLimit)
         {
             isLimit = true;
+            transform.localScale = Vector3.one * 0.45f;
             SoundManager.Instance.PlayFxSound(SoundManager.Instance.HitBoard);
         }
     }
@@ -96,6 +100,7 @@ public class PlayerController : MonoBehaviour
 
     private void DisablePlayer()
     {
+        transform.localScale = Vector3.one * 0.45f;
         // Thực hiện tween scale về 0 cho BallPlayer
         transform.DOScale(0, 0.5f).SetEase(Ease.Linear).OnComplete(() =>
         {
