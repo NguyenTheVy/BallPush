@@ -37,7 +37,6 @@ public class ObstacleBall : MonoBehaviour
 
             if (IsInHoleLayer(transform.position))
             {
-                GameManager.instance.CurrentLevel.OnBallEnteredHole(this.gameObject);
                 DisableBall(); // Dừng nếu vào vùng lỗ
 
                 Debug.Log("vao lo");
@@ -83,6 +82,7 @@ public class ObstacleBall : MonoBehaviour
         {
             if (collider.gameObject.layer == holeLayer)
             {
+                transform.position = collider.gameObject.transform.position;
                 return true; // Nếu chạm vào layer "Hole"
             }
         }
@@ -106,7 +106,7 @@ public class ObstacleBall : MonoBehaviour
         {
             // Gọi hàm khi bóng vào lỗ
             gameObject.SetActive(false); // Vô hiệu hóa BallRed
-            Debug.Log("BallRed đã bị tắt do vào vùng lỗ.");
+            GameManager.instance.CurrentLevel.OnBallEnteredHole(this.gameObject);
         });
     }
 

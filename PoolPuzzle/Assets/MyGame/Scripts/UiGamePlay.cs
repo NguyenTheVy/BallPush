@@ -75,5 +75,6 @@ public class UiGamePlay : MonoBehaviour
     private void OnDisable()
     {
         SoundManager.Instance.StopPlayMusic();
+        DOTween.Kill(transform);
     }
 }
