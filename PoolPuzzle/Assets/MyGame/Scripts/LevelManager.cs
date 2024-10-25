@@ -45,19 +45,33 @@ public class LevelManager : MonoBehaviour
             {
                 case "Left":
                     targetPosition = new Vector3(bottomLeftLimit.localPosition.x, playerTransform.position.y, playerTransform.position.z);
-                    playerTransform.DOScaleY(0.25f, 0.1f);
+                    if (playerTransform.localPosition.x > bottomLeftLimit.localPosition.x)
+                    {
+                        playerTransform.DOScaleY(0.25f, 0.01f);
+                    };
                     break;
                 case "Right":
                     targetPosition = new Vector3(topRightLimit.localPosition.x, playerTransform.position.y, playerTransform.position.z);
-                    playerTransform.DOScaleY(0.25f, 0.1f);
+                    if (playerTransform.localPosition.x < topRightLimit.localPosition.x)
+                    {
+                        playerTransform.DOScaleY(0.25f, 0.01f);
+                    };
                     break;
                 case "Up":
-                    playerTransform.DOScaleX(0.25f, 0.1f);
                     targetPosition = new Vector3(playerTransform.position.x, topRightLimit.localPosition.y, playerTransform.position.z);
+
+                    if (playerTransform.localPosition.y < topRightLimit.localPosition.y)
+                    {
+                        playerTransform.DOScaleX(0.25f, 0.01f);
+                    };
+
                     break;
                 case "Down":
-                    playerTransform.DOScaleX(0.25f, 0.1f);
                     targetPosition = new Vector3(playerTransform.position.x, bottomLeftLimit.localPosition.y, playerTransform.position.z);
+                    if (playerTransform.localPosition.y > bottomLeftLimit.localPosition.y)
+                    {
+                        playerTransform.DOScaleX(0.25f, 0.01f);
+                    };
                     break;
             }
 

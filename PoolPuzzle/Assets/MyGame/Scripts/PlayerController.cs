@@ -31,8 +31,9 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("BallRed"))
         {
+            DOTween.Kill(transform);
             Debug.Log("Chạm vào BallRed");
-
+            transform.localScale = Vector3.one * 0.45f;
             _rb.velocity = Vector2.zero;
 
             // Lấy hướng tác động từ player tới BallRed
