@@ -1,11 +1,13 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D _rb;
+    private BoxCollider2D _collider2D;
 
     public Animator animator;
 
@@ -15,6 +17,32 @@ public class PlayerController : MonoBehaviour
     {
         _rb = transform.GetComponent<Rigidbody2D>();
         animator = transform.GetComponent<Animator>();
+
+        CircleCollider2D circleCollider2D = transform.GetComponent<CircleCollider2D>();
+        if(circleCollider2D != null )
+        {
+            Destroy( circleCollider2D );
+            transform.AddComponent<BoxCollider2D>();
+        }
+
+        _collider2D = transform.GetComponent<BoxCollider2D>();
+        _collider2D.offset = new Vector3(-0.04f, 0.04f);
+        _collider2D.size = new Vector3(0.8f, 0.8f);
+
+        float x = RoundToNearestFive(transform.localPosition.x);
+        float y = RoundToNearestFive(transform.localPosition.y);
+        transform.localPosition = new Vector2(x, y);
+    }
+
+    private float RoundToNearestFive(float value)
+    {
+        float decimalPart = Mathf.Abs(value * 100) % 10;
+
+        if (decimalPart != 0 && decimalPart != 5)
+        {
+            return Mathf.Floor(value * 10) / 10 + 0.05f;
+        }
+        return value;
     }
 
     private void Update()
@@ -31,53 +59,62 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("BallRed"))
         {
+            RoundPosXYPlayer();
             DOTween.Kill(transform);
             Debug.Log("Chạm vào BallRed");
             transform.localScale = Vector3.one * 0.45f;
             _rb.velocity = Vector2.zero;
 
-            // Lấy hướng tác động từ player tới BallRed
-            Vector2 hitDirection = collision.transform.position - transform.position;
+            //Vector2 hitDirection = collision.transform.position - transform.position;
+            Vector2 hitDirection = (collision.transform.position - transform.position).normalized;
 
+            BackPush(hitDirection, collision);
 
-
-            // Chọn trục di chuyển
-            if (Mathf.Abs(hitDirection.x) > Mathf.Abs(hitDirection.y))
-            {
-                hitDirection = new Vector2(hitDirection.x > 0 ? 1 : -1, 0); // Di chuyển theo trục X
-            }
-            else
-            {
-                hitDirection = new Vector2(0, hitDirection.y > 0 ? 1 : -1); // Di chuyển theo trục Y
-            }
-
-            if (hitDirection.x > 0)
-            {
-                transform.position = new Vector3(collision.transform.position.x - 0.4f, collision.transform.position.y, 0);
-            }
-            else if (hitDirection.x < 0)
-            {
-                transform.position = new Vector3(collision.transform.position.x + 0.4f, collision.transform.position.y, 0);
-            }
-            else if (hitDirection.y > 0)
-            {
-                transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y - 0.4f, 0);
-            }
-            else if (hitDirection.y < 0)
-            {
-                transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y + 0.4f, 0);
-            }
-
-            // Gọi hàm MoveBall từ script ObstacleBallController và truyền hướng va chạm
             ObstacleBall ballController = collision.gameObject.GetComponent<ObstacleBall>();
             if (ballController != null)
             {
                 SoundManager.Instance.PlayFxSound(SoundManager.Instance.Ballhit);
-                ballController.MoveBall(hitDirection); // Gọi hàm di chuyển BallRed theo hướng thẳng
+                ballController.MoveBall(hitDirection);
             }
 
-            // Đặt trạng thái IsMoving của GameManager
             GameManager.instance.CurrentLevel.IsMoving = false;
+        }
+    }
+
+    public void RoundPosXYPlayer()
+    {
+        float x = RoundToNearestFive(transform.localPosition.x);
+        float y = RoundToNearestFive(transform.localPosition.y);
+        transform.localPosition = new Vector2(x, y);
+    }
+
+
+    private void BackPush(Vector2 hitDirection, Collision2D collision)
+    {
+        if (Mathf.Abs(hitDirection.x) > Mathf.Abs(hitDirection.y))
+        {
+            hitDirection = new Vector2(hitDirection.x > 0 ? 1 : -1, 0);
+        }
+        else
+        {
+            hitDirection = new Vector2(0, hitDirection.y > 0 ? 1 : -1);
+        }
+
+        if (hitDirection.x > 0)
+        {
+            transform.position = new Vector3(collision.transform.position.x - 0.4f, collision.transform.position.y, 0);
+        }
+        else if (hitDirection.x < 0)
+        {
+            transform.position = new Vector3(collision.transform.position.x + 0.4f, collision.transform.position.y, 0);
+        }
+        else if (hitDirection.y > 0)
+        {
+            transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y - 0.4f, 0);
+        }
+        else if (hitDirection.y < 0)
+        {
+            transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y + 0.4f, 0);
         }
     }
 

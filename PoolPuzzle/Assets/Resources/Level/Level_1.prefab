@@ -233,6 +233,7 @@ MonoBehaviour:
   isSpawnTrailfx: 0
   bottomLeftLimit: {fileID: 3115529480135695977}
   topRightLimit: {fileID: 6252025436651813157}
+  targetPosition: {x: 0, y: 0, z: 0}
   isMoving: 0
   ballsInPlay: []
 --- !u!1 &2392436329257686728

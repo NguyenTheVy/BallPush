@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening; // Thêm thư viện DoTween
 using Unity.VisualScripting;
+using System;
 
 public class ObstacleBall : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ObstacleBall : MonoBehaviour
     [SerializeField] private bool isMoving = false; // Biến để theo dõi trạng thái di chuyển
 
     public CircleCollider2D circleCollider2D;
+    public BoxCollider2D collider;
 
     Transform hole;
 
@@ -20,6 +22,31 @@ public class ObstacleBall : MonoBehaviour
         // Giả sử bạn có cách nào đó để khởi tạo bóng
         GameManager.instance.CurrentLevel.AddBall(this.gameObject);
         circleCollider2D = GetComponent<CircleCollider2D>();
+        circleCollider2D.offset = new Vector2(-0.03f, 0.03f);
+
+        if (circleCollider2D != null)
+        {
+            Destroy(circleCollider2D);
+            transform.AddComponent<BoxCollider2D>();
+            collider = GetComponent<BoxCollider2D>();
+            collider.offset = new Vector3(-0.04f, 0.04f);
+            collider.size = new Vector3(0.8f, 0.8f);
+        }
+
+        float x = RoundToNearestFive(transform.localPosition.x);
+        float y = RoundToNearestFive(transform.localPosition.y);
+        transform.localPosition = new Vector2(x, y);
+    }
+
+    private float RoundToNearestFive(float value)
+    {
+        float decimalPart = Mathf.Abs(value * 100) % 10;
+
+        if (decimalPart != 0 && decimalPart != 5)
+        {
+            return Mathf.Floor(value * 10) / 10 + 0.05f;
+        }
+        return value;
     }
 
     public void MoveBall(Vector2 hitDirection)
@@ -32,11 +59,9 @@ public class ObstacleBall : MonoBehaviour
 
         isMoving = true; // Đánh dấu là đang di chuyển
         Vector3 targetPosition = transform.position + (Vector3)hitDirection * moveDistance;
-
         // Di chuyển tới vị trí mục tiêu
         T_move = transform.DOMove(targetPosition, moveDuration).OnUpdate(() =>
         {
-
             if (IsInHoleLayer(transform.position))
             {
                 DisableBall(); // Dừng nếu vào vùng lỗ
@@ -56,7 +81,7 @@ public class ObstacleBall : MonoBehaviour
 
         }).OnComplete(() =>
         {
-            isMoving = false; // Đánh dấu không còn di chuyển nữa
+            isMoving = false;
         });
     }
 
@@ -102,7 +127,7 @@ public class ObstacleBall : MonoBehaviour
     private void DisableBall()
     {
         StopBallMovement(); // Dừng tween nếu vào vùng lỗ
-        circleCollider2D.enabled = false;
+        collider.enabled = false;
         // Thực hiện tween scale về 0
 
         transform.DOMove(hole.transform.position, 0.2f).OnComplete(()=>

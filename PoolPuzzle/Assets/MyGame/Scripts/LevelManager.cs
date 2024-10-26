@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private SwipeListener swipeListener;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float playerSpeed;
+    [SerializeField] private PlayerController playerController;
 
     public bool isEndGame = false;
     public bool isSpawnTrailfx = false;
@@ -17,7 +18,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform bottomLeftLimit;
     [SerializeField] private Transform topRightLimit;
 
-    private Vector3 targetPosition;
+    public Vector3 targetPosition;
     [SerializeField] private bool isMoving = false;  // Kiểm soát trạng thái di chuyển
 
     public bool IsMoving { get => isMoving; set => isMoving = value; }
