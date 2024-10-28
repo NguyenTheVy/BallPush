@@ -48,7 +48,24 @@ public class UiGamePlay : MonoBehaviour
     }
     private void OnReplay()
     {
-        SceneManager.LoadScene(1);
+        if(AdsController.ins.TimeShowInter >= 120)
+        {
+            AdManager.instance.ShowInter(()=>
+            {
+                SceneManager.LoadScene(1);
+                AdsController.ins.TimeShowInter = 0;
+
+            }, ()=>
+            {
+                SceneManager.LoadScene(1);
+                AdsController.ins.TimeShowInter = 0;
+            }, "ShowInter");
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+
     }
 
     public void InitLevel()
