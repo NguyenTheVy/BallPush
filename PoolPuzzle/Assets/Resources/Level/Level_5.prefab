@@ -947,7 +947,7 @@ MonoBehaviour:
   OnSwipe:
     m_PersistentCalls:
       m_Calls: []
-  _sensetivity: 5
+  _sensetivity: 10
   _continuousDetection: 0
   _swipeDetectionMode: 2
 --- !u!1 &5124698956608027305

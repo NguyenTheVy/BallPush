@@ -79,7 +79,7 @@ namespace GG.Infrastructure.Utils.Swipe
                 InitSwipe();
             }
 
-            if (_waitForSwipe && Input.GetMouseButton(0))
+            if (_waitForSwipe && Input.GetMouseButtonUp(0))
             {
                 CheckSwipe();
             }
