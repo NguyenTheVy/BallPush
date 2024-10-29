@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
         {
             RoundPosXYPlayer();
             DOTween.Kill(transform);
-            Debug.Log("Chạm vào BallRed");
             transform.localScale = Vector3.one * 0.45f;
             _rb.velocity = Vector2.zero;
 
@@ -116,6 +115,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y + 0.4f, 0);
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Debug.Log("BallPlayer không bị tắt vì đã chạm vào giới hạn.");
+                //Debug.Log("BallPlayer không bị tắt vì đã chạm vào giới hạn.");
             }
         }
     }
@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.instance.CurrentLevel.OnPlayerFellIntoHole(); // Gọi hàm khi BallPlayer rơi vào lỗ
             gameObject.SetActive(false); // Vô hiệu hóa BallPlayer sau khi scale về 0
-            Debug.Log("BallPlayer đã bị tắt do vào vùng lỗ.");
+           // Debug.Log("BallPlayer đã bị tắt do vào vùng lỗ.");
         });
     }
 

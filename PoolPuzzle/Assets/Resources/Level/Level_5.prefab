@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4634a5c7e7913674bb7c2da3696d4fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   isLimit: 0
 --- !u!58 &4956675918406547223
 CircleCollider2D:
@@ -293,6 +294,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &240648671417448110
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -376,10 +378,12 @@ MonoBehaviour:
   swipeListener: {fileID: 7098209475689535025}
   playerTransform: {fileID: 1541597063905761831}
   playerSpeed: 9
+  playerController: {fileID: 0}
   isEndGame: 0
   isSpawnTrailfx: 0
   bottomLeftLimit: {fileID: 3384768121411839054}
   topRightLimit: {fileID: 3465925052933100001}
+  targetPosition: {x: 0, y: 0, z: 0}
   isMoving: 0
   ballsInPlay: []
 --- !u!1 &2164065213109147403
@@ -512,6 +516,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &1138386855081383055
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -942,7 +947,7 @@ MonoBehaviour:
   OnSwipe:
     m_PersistentCalls:
       m_Calls: []
-  _sensetivity: 10
+  _sensetivity: 5
   _continuousDetection: 0
   _swipeDetectionMode: 2
 --- !u!1 &5124698956608027305
@@ -1075,6 +1080,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &3891384720500505599
 CircleCollider2D:
   m_ObjectHideFlags: 0

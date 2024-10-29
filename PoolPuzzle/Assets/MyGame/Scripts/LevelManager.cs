@@ -130,7 +130,6 @@ public class LevelManager : MonoBehaviour
         if (ballsInPlay.Contains(ball))
         {
             ballsInPlay.Remove(ball); // Xóa bóng khỏi danh sách
-            Debug.Log(ball.name + " đã vào lỗ.");
         }
 
         CheckWinCondition(); // Kiểm tra điều kiện thắng

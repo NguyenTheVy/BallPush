@@ -66,7 +66,6 @@ public class ObstacleBall : MonoBehaviour
             {
                 DisableBall(); // Dừng nếu vào vùng lỗ
 
-                Debug.Log("vao lo");
                 return;
             }
 
@@ -77,7 +76,6 @@ public class ObstacleBall : MonoBehaviour
                 StopBallMovement(); // Dừng lại nếu ra ngoài giới hạn
                 return;
             }*/
-            Debug.Log("check");
 
         }).OnComplete(() =>
         {
@@ -121,7 +119,6 @@ public class ObstacleBall : MonoBehaviour
         T_move?.Kill();
         // Dừng tất cả các tween đang chạy
         isMoving = false; // Đánh dấu không còn di chuyển nữa
-        Debug.Log("BallRed đã dừng lại do va chạm với giới hạn.");
     }
 
     private void DisableBall()
