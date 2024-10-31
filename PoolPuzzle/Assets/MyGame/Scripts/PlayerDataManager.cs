@@ -8,6 +8,9 @@ public static class PlayerDataManager
     private static string Sound = "SOUND";
     private static string Music = "MUSIC";
 
+
+    private static string LevelLoad = "LEVELLOAD";
+
     public static bool GetSound()
     {
         return PlayerPrefs.GetInt(Sound, 1) == 1;
@@ -27,4 +30,15 @@ public static class PlayerDataManager
     {
         PlayerPrefs.SetInt(Music, isOn ? 1 : 0);
     }
+
+    public static int GetLevelLoad()
+    {
+        return PlayerPrefs.GetInt(LevelLoad, 0);
+    }
+
+    public static void SetLevelLoad(int Level)
+    {
+        PlayerPrefs.SetInt(LevelLoad, Level);
+    }
+
 }

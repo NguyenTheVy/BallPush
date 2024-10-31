@@ -229,6 +229,7 @@ MonoBehaviour:
   swipeListener: {fileID: 917920165288297989}
   playerTransform: {fileID: 1728932048593684491}
   playerSpeed: 9
+  playerController: {fileID: 0}
   isEndGame: 0
   isSpawnTrailfx: 0
   bottomLeftLimit: {fileID: 3115529480135695977}
@@ -366,6 +367,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &4341103169856317783
 CircleCollider2D:
   m_ObjectHideFlags: 0

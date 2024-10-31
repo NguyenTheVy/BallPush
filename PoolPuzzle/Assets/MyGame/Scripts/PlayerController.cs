@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
             hitDirection = new Vector2(0, hitDirection.y > 0 ? 1 : -1);
         }
 
+
         if (hitDirection.x > 0)
         {
             transform.position = new Vector3(collision.transform.position.x - 0.4f, collision.transform.position.y, 0);
@@ -130,6 +131,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                isLimit = true;
                 //Debug.Log("BallPlayer không bị tắt vì đã chạm vào giới hạn.");
             }
         }

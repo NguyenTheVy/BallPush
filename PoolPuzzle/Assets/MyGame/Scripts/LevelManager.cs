@@ -2,6 +2,7 @@
 using GG.Infrastructure.Utils.Swipe;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.Mathematics;
 
 public class LevelManager : MonoBehaviour
 {
@@ -45,30 +46,30 @@ public class LevelManager : MonoBehaviour
             switch (swipe)
             {
                 case "Left":
-                    targetPosition = new Vector3(bottomLeftLimit.localPosition.x, playerTransform.position.y, playerTransform.position.z);
+                    targetPosition = new Vector3(bottomLeftLimit.localPosition.x, playerTransform.localPosition.y, playerTransform.localPosition.z);
                     if (playerTransform.localPosition.x > bottomLeftLimit.localPosition.x)
                     {
                         playerTransform.DOScaleY(0.25f, 0.01f);
                     };
                     break;
                 case "Right":
-                    targetPosition = new Vector3(topRightLimit.localPosition.x, playerTransform.position.y, playerTransform.position.z);
+                    targetPosition = new Vector3(topRightLimit.localPosition.x, playerTransform.localPosition.y, playerTransform.localPosition.z);
                     if (playerTransform.localPosition.x < topRightLimit.localPosition.x)
                     {
                         playerTransform.DOScaleY(0.25f, 0.01f);
                     };
                     break;
                 case "Up":
-                    targetPosition = new Vector3(playerTransform.position.x, topRightLimit.localPosition.y, playerTransform.position.z);
+                    targetPosition = new Vector3(playerTransform.localPosition.x, topRightLimit.localPosition.y, playerTransform.localPosition.z);
 
-                    if (playerTransform.localPosition.y < topRightLimit.localPosition.y)
+                    if (Mathf.Abs(playerTransform.localPosition.y - topRightLimit.localPosition.y) > 0.001f)
                     {
                         playerTransform.DOScaleX(0.25f, 0.01f);
-                    };
+                    }
 
                     break;
                 case "Down":
-                    targetPosition = new Vector3(playerTransform.position.x, bottomLeftLimit.localPosition.y, playerTransform.position.z);
+                    targetPosition = new Vector3(playerTransform.localPosition.x, bottomLeftLimit.localPosition.y, playerTransform.localPosition.z);
                     if (playerTransform.localPosition.y > bottomLeftLimit.localPosition.y)
                     {
                         playerTransform.DOScaleX(0.25f, 0.01f);
@@ -100,6 +101,7 @@ public class LevelManager : MonoBehaviour
             // Khi đã tới vị trí mục tiêu thì mở khóa vuốt
             if (playerTransform.position == targetPosition)
             {
+                playerTransform.localScale = Vector3.one * 0.45f;
                 isMoving = false;
                 isSpawnTrailfx = false;
                 playerTransform.GetComponent<PlayerController>().isLimit = false;

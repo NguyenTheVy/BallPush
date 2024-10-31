@@ -708,7 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipeListener: {fileID: 427631057073890640}
   playerTransform: {fileID: 6342646968957389790}
-  playerSpeed: 9
+  playerSpeed: 11
   playerController: {fileID: 0}
   isEndGame: 0
   isSpawnTrailfx: 0

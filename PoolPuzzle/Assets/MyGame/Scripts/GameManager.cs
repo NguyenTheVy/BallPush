@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int LevelPlaying;
 
+    int levelToLoad;
 
     public ParticleSystem Traifx;
 
@@ -29,49 +30,48 @@ public class GameManager : MonoBehaviour
         InitLevel();
     }
 
-    private void Update()
-    {
-
-    }
-
     public void InitLevel()
     {
-        GameObject LevelLoad = Resources.Load<GameObject>("Level/Level_" + LevelPlaying);
+        levelToLoad = PlayerDataManager.GetLevelLoad();
 
-        GameObject levelObj = Instantiate(LevelLoad, Vector3.zero, Quaternion.identity);
+        if (levelToLoad == 0)
+        {
+            GameObject LevelLoad = Resources.Load<GameObject>("Level/Level_" + LevelPlaying);
 
-        LevelManager CurrentLevel = levelObj.GetComponent<LevelManager>();
+            GameObject levelObj = Instantiate(LevelLoad, Vector3.zero, Quaternion.identity);
+            LevelManager CurrentLevel = levelObj.GetComponent<LevelManager>();
 
-        this.CurrentLevel = CurrentLevel;
+            this.CurrentLevel = CurrentLevel;
+        }
+        else
+        {
+            GameObject LevelLoad = Resources.Load<GameObject>("Level/Level_" + levelToLoad);
+
+            GameObject levelObj = Instantiate(LevelLoad, Vector3.zero, Quaternion.identity);
+            LevelManager CurrentLevel = levelObj.GetComponent<LevelManager>();
+
+            this.CurrentLevel = CurrentLevel;
+        }
     }
 
 
     public void IncreaseLevel(int level)
     {
-        int ToltalLevel = DataLevel1.CountAmoutFolderInResources("Level");
+        int totalLevel = DataLevel1.CountAmoutFolderInResources("Level"); 
 
-         Destroy(CurrentLevel.gameObject);
+        Destroy(CurrentLevel.gameObject);
 
-        if (level == ToltalLevel)
-        {
-            LevelPlaying = 1;
-            DataLevel1.SetLevel(1);
-            InitLevel();
-
-            UiGamePlay.instance.InitLevel();
-
-            return;
-        }
-
-        int currentLevel = 1;
         level++;
+        LevelPlaying = level; 
 
-        LevelPlaying = level;
 
-        if (level > currentLevel)
+        if (level > totalLevel)
         {
-            DataLevel1.SetLevel(level);
+            levelToLoad = UnityEngine.Random.Range(20, 51);
+            PlayerDataManager.SetLevelLoad(levelToLoad);
         }
+
+        DataLevel1.SetLevel(LevelPlaying);
 
         InitLevel();
         UiGamePlay.instance.InitLevel();
