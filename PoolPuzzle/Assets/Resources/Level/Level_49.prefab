@@ -367,6 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4634a5c7e7913674bb7c2da3696d4fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   isLimit: 0
 --- !u!61 &2358310422954083003
 BoxCollider2D:
@@ -543,6 +544,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &1882816068923220346
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -773,7 +775,7 @@ Transform:
   m_GameObject: {fileID: 2491238047284188788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.17, y: 1.58, z: 0}
+  m_LocalPosition: {x: 1.17, y: 2, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -827,10 +829,12 @@ MonoBehaviour:
   swipeListener: {fileID: 427631057073890640}
   playerTransform: {fileID: 6342646968957389790}
   playerSpeed: 9
+  playerController: {fileID: 0}
   isEndGame: 0
   isSpawnTrailfx: 0
   bottomLeftLimit: {fileID: 379536032015278508}
   topRightLimit: {fileID: 3260027157515027303}
+  targetPosition: {x: 0, y: 0, z: 0}
   isMoving: 0
   ballsInPlay: []
 --- !u!1 &3556259652894768310
@@ -1287,6 +1291,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &4284355214411890535
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1452,6 +1457,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &143314602418859177
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1617,6 +1623,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &5216527239742712132
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1835,6 +1842,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &1373869435448660001
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2000,6 +2008,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &2067936022689202825
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2060,7 +2069,7 @@ Transform:
   m_GameObject: {fileID: 7681700418702788969}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.29, y: -1.26, z: 0}
+  m_LocalPosition: {x: -1.29, y: -1.6, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2436,6 +2445,7 @@ MonoBehaviour:
   moveDuration: 1
   isMoving: 0
   circleCollider2D: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!58 &4136401931759968733
 CircleCollider2D:
   m_ObjectHideFlags: 0
