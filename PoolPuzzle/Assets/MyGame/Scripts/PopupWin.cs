@@ -28,11 +28,35 @@ public class PopupWin : MonoBehaviour
 
     private void OnNextLevel()
     {
-        SoundManager.Instance.PlayFxSound(SoundManager.Instance.buttonclick);
-        GameManager.instance.IncreaseLevel(GameManager.instance.LevelPlaying);
+        if (AdsController.ins.TimeShowInter >= 120)
+        {
+            AdManager.instance.ShowInter(() =>
+            {
+                SoundManager.Instance.PlayFxSound(SoundManager.Instance.buttonclick);
+                GameManager.instance.IncreaseLevel(GameManager.instance.LevelPlaying);
 
-        SoundManager.Instance.PlayFxSound(SoundManager.Instance.ClosePopup);
-        gameObject.SetActive(false);
+                SoundManager.Instance.PlayFxSound(SoundManager.Instance.ClosePopup);
+                AdsController.ins.TimeShowInter = 0;
+                gameObject.SetActive(false);
+            }, () =>
+            {
+                SoundManager.Instance.PlayFxSound(SoundManager.Instance.buttonclick);
+                GameManager.instance.IncreaseLevel(GameManager.instance.LevelPlaying);
+
+                SoundManager.Instance.PlayFxSound(SoundManager.Instance.ClosePopup);
+                AdsController.ins.TimeShowInter = 0;
+                gameObject.SetActive(false);
+            }, "ShowInter");
+        }
+        else
+        {
+            SoundManager.Instance.PlayFxSound(SoundManager.Instance.buttonclick);
+            GameManager.instance.IncreaseLevel(GameManager.instance.LevelPlaying);
+
+            SoundManager.Instance.PlayFxSound(SoundManager.Instance.ClosePopup);
+            gameObject.SetActive(false);
+        }
+
     }
 
     private void OnDisable()

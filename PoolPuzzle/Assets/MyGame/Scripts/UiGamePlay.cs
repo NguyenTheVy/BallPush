@@ -35,7 +35,6 @@ public class UiGamePlay : MonoBehaviour
         btn_setting.onClick.AddListener(OnOpenSetting);
         btn_Skip.onClick.AddListener(OnSkipGame);
         btn_Replay.onClick.AddListener(OnReplay);
-        InitLevel();
 
         AimBtn();
     }

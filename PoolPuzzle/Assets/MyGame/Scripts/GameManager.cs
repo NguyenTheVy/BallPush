@@ -40,17 +40,18 @@ public class GameManager : MonoBehaviour
 
             GameObject levelObj = Instantiate(LevelLoad, Vector3.zero, Quaternion.identity);
             LevelManager CurrentLevel = levelObj.GetComponent<LevelManager>();
-
             this.CurrentLevel = CurrentLevel;
+
+            UiGamePlay.instance.InitLevel();
         }
         else
         {
             GameObject LevelLoad = Resources.Load<GameObject>("Level/Level_" + levelToLoad);
-
             GameObject levelObj = Instantiate(LevelLoad, Vector3.zero, Quaternion.identity);
             LevelManager CurrentLevel = levelObj.GetComponent<LevelManager>();
 
             this.CurrentLevel = CurrentLevel;
+            UiGamePlay.instance.InitLevel();
         }
     }
 
